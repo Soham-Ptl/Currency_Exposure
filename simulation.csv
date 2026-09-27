@@ -1,0 +1,10 @@
+Scenario,USD_Change,EUR_Change,GBP_Change,JPY_Change,AUD_Change
+Base,0,0,0,0,0
+All_Currencies_Up_5%,0.05,0.05,0.05,0.05,0.05
+All_Currencies_Down_5%,-0.05,-0.05,-0.05,-0.05,-0.05
+USD_Down_10%,-0.10,0,0,0,0
+USD_Up_10%, 0.10,0,0,0,0
+EUR_Down_10%,0,-0.10,0,0,0
+EUR_Up_10%,0,0.10,0,0,0
+Mixed_Scenario_1,-0.10,0.05,0.08,-0.03,0.04
+Mixed_Scenario_2,0.10,-0.05,-0.08,0.03,-0.04
