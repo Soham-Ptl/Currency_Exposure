@@ -1,10 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("data.csv")
-df_exposure = pd.DataFrame()
-df2 = pd.read_csv("simulation.csv")
+df = pd.read_csv("data.csv") #importing revenue-expense data 
+df_exposure = pd.DataFrame() #creaeting a dataframe for storing the individual currency exposure data
+df2 = pd.read_csv("simulation.csv") #importing the inputs for the market variation situations
 
+
+# Calculating revenue and expenses in INR
 df["Revenue_INR"] = df["Revenue"] * df["Exchange_Rate_INR"]
 df["Expenses_INR"] = df["Expenses"] * df["Exchange_Rate_INR"]
 print(df.to_string())
@@ -27,6 +29,7 @@ print("\n===============================================\n\n\n")
 
 
 
+# Prints the exposure data for each currency
 print("\n===============================================\n")
 print("               Currency Exposure :")
 print("\n-----------------------------------------------\n")
@@ -48,6 +51,7 @@ result = pd.DataFrame()
 temp = pd.DataFrame() 
 
 
+# Calculating profit change from base scenario for every scenario in df2
 for i in range ( len(df2) ):
     scenario = df2.iloc[i]
 
@@ -130,3 +134,5 @@ plt.title("Currency Sensitivity Based on Net Exposure")
 plt.tight_layout()
 
 plt.savefig("plots/currency_sensitivity.png", dpi=300)
+
+
